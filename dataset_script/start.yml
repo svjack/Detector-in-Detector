@@ -1,0 +1,86 @@
+train:
+  run_name: detector-in-detector-tiny-v2
+  job_dir: C:\Coding\Python\Obj_Detection_Mix\job_detector_in_detector\
+  checkpoints_max_keep: 10
+  display_every_steps: 20
+  display_every_secs:
+  num_epochs: 1000000000
+  random_shuffle: True
+  debug: True
+
+eval:
+  # Image visualization mode, options = train, eval, debug,
+  # (empty). Default=(empty).
+  image_vis: eval
+
+dataset:
+  type: object_detection
+  dir: C:\Coding\Python\Priv_personpart\did\
+
+  data_augmentation:
+    - flip:
+        left_right: True
+        up_down: False
+        prob: 0.5
+    # Also available:
+    # # If you resize to too small images, you may end up not having any anchors
+    # # that aren't partially outside the image.
+    # - resize:
+    #     min_size: 600
+    #     max_size: 1024
+    #     prob: 0.2
+    # - patch:
+    #     min_height: 600
+    #     min_width: 600
+    #     prob: 0.2
+    - distortion:
+         brightness:
+           max_delta: 0.2
+         hue:
+           max_delta: 0.2
+         saturation:
+           lower: 0.5
+           upper: 1.5
+         prob: 0.3
+
+model:
+  type: fasterrcnn
+  main_part_label: 2
+  main_part_prob_threshold: 0.7
+
+  network:
+    num_classes: 3
+
+  loss:
+    # Loss weights for calculating the total loss.
+    rpn_cls_loss_weight: 1.0
+    rpn_reg_loss_weights: 1.0
+    rcnn_cls_loss_weight: 1.0
+    rcnn_reg_loss_weights: 1.0
+
+  base_network:
+    # Which type of pretrained network to use.
+    architecture: resnet_v1_50
+    # Should we train the pretrained network.
+    trainable: True
+    # From which file to load the weights.
+    weights:
+    # Should we download weights if not available.
+    download: True
+    # Which endpoint layer to use as feature map for network.
+    endpoint:
+    # Starting point after which all the variables in the base network will be
+    # trainable. If not specified, then all the variables in the network will be
+    # trainable.
+    fine_tune_from: block2
+    # Whether to train the ResNet's batch norm layers.
+    train_batch_norm: False
+    # Whether to use the base network's tail in the RCNN.
+    use_tail: True
+    # Whether to freeze the base network's tail.
+    freeze_tail: False
+    # Output stride for ResNet.
+    output_stride: 16
+    arg_scope:
+      # Regularization.
+      weight_decay: 0.0005
