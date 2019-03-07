@@ -1,15 +1,15 @@
 # Detector-in-Detector
-Unofficial Implementation of Detector-in-Detector: Multi-Level Analysis for Human-Parts in simplify form.
+  Unofficial Implementation of Detector-in-Detector: Multi-Level Analysis for Human-Parts in simplify form.
 
-This project is based on tensorflow object detection framework luminoth, 
+  This project is based on tensorflow object detection framework luminoth, 
 and overload the faster-rcnn interface to implement detector-in-detector in 
 simplify form.
 
-Paper Link: https://arxiv.org/abs/1902.07017
+  Paper Link: https://arxiv.org/abs/1902.07017
 
 Install Steps：
-1\ install luminoth according to https://luminoth.readthedocs.io/en/latest/
-2\ copy following files in this project into your luminoth path:
+  1\ install luminoth according to https://luminoth.readthedocs.io/en/latest/
+  2\ copy following files in this project into your luminoth path:
 
 train.py
 models/fasterrcnn/__init__.py
@@ -24,14 +24,14 @@ predict.py
 utils/detector_in_detector_predicting.py
 
 Train this model:
-1\ download paper dataset according to https://github.com/xiaojie1017/Human-Parts
-2\ run dataset_script/preprocess_dataset.py to generate luminoth friendly csv annotation file
-3\ generate tfrecord file with luminoth dataset api
-4\ use luminoth train -c dataset_script/start.yml to train 
-5\ use tensorboard to valid your net.
-6\ use luminoth predict -c dataset_script/start.yml to train
+  1\ download paper dataset according to https://github.com/xiaojie1017/Human-Parts
+  2\ run dataset_script/preprocess_dataset.py to generate luminoth friendly csv annotation file
+  3\ generate tfrecord file with luminoth dataset api
+  4\ use luminoth train -c dataset_script/start.yml to train 
+  5\ use tensorboard to valid your net.
+  6\ use luminoth predict -c dataset_script/start.yml to train
 
-how to debug ?????
+how to debug
   train time:
   edit utils/hooks/image_vis_hook.py and retrieve in after_run 
 
