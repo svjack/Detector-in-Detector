@@ -10,7 +10,7 @@ simplify form.<br>
 
 Install Steps：<br>
  &emsp; 1\ install luminoth according to https://luminoth.readthedocs.io/en/latest/<br>
-  &emsp;2\ copy following files in this project into your luminoth path:<br>
+ &emsp;2\ copy following files in this project into your luminoth path:<br>
 
 train.py<br>
 models/fasterrcnn/__init__.py<br>
