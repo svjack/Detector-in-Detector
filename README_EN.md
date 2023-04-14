@@ -47,7 +47,7 @@ utils/detector_in_detector_predicting.py
 * 3 generate tfrecord file with luminoth dataset api<br>
 * 4 use luminoth train -c dataset_script/start.yml to train <br>
 * 5 use tensorboard to valid your net.<br>
-* 6 use luminoth predict -c dataset_script/start.yml to train<br>
+* 6 use luminoth predict -c dataset_script/start.yml to predict <br>
 
 ## Details
 ### How to debug
