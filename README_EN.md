@@ -20,7 +20,7 @@ simplify form.<br>
 Paper Link: https://arxiv.org/abs/1902.07017<br>
 
 ## Installtion
-* 1 install luminoth according to https://luminoth.readthedocs.io/en/latest/<br>
+* 1 install luminoth according to https://github.com/tryolabs/luminoth <br>
 * 2 copy following files in this project into your luminoth path:<br>
 
 ```bash
