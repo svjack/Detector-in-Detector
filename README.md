@@ -17,7 +17,7 @@
 论文链接: https://arxiv.org/abs/1902.07017<br>
 
 ## 安装
-* 1 根据文档 https://luminoth.readthedocs.io/en/latest/ 安装 luminoth <br>
+* 1 根据 https://github.com/tryolabs/luminoth 安装 luminoth <br>
 * 2 将下面的文件拷贝入 luminoth 源码工程文件路径:<br>
 
 ```bash
